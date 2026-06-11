@@ -1,0 +1,12 @@
+# Modelo Lógico (3ª Forma Normal)
+
+*   **CATEGORIA_QUARTO** (PK_id_categoria, nome, metragem, qtd_camas, capacidade_maxima, preco_base_diaria)
+*   **COMODIDADE** (PK_id_comodidade, descricao)
+*   **CATEGORIA_COMODIDADE** (PK_id_categoria_comodidade, FK_id_categoria, FK_id_comodidade)
+*   **QUARTO** (PK_id_quarto, numero_quarto, andar, status, FK_id_categoria)
+*   **HOSPEDE** (PK_id_hospede, nome_completo, cpf_passaporte, telefone, email, logradouro, numero, bairro, cidade, estado, pais, cep, nacionalidade)
+*   **RESERVA** (PK_id_reserva, data_checkin, data_checkout, qtd_hospedes, valor_total, forma_pagamento, status, solicitacoes_especiais, FK_id_hospede, FK_id_quarto)
+*   **FUNCIONARIO** (PK_id_funcionario, nome_completo, funcao, escala_trabalho)
+*   **SERVICO_ADICIONAL** (PK_id_servico, nome_servico, valor_padrao)
+*   **CONSUMO_SERVICO** (PK_id_consumo, data_hora, valor_cobrado, tipo_cobranca, FK_id_reserva, FK_id_servico, FK_id_funcionario)
+*   **MANUTENCAO** (PK_id_manutencao, tipo_manutencao, data_inicio, data_fim, previsao_liberacao, custo, descricao, FK_id_quarto, FK_id_funcionario)
